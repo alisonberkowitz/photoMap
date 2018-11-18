@@ -12,3 +12,17 @@ body {
 #map-canvas { 
 	height: 100%;
 }
+
+.info-window-content {
+	margin: 15px;
+	margin-right: 0px;
+	max-width: 320px;
+}
+
+.info-window-content img {
+	max-width: 100% !important;
+}
+
+.info-window-content p b {
+	color: #369;
+}
