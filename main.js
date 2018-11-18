@@ -1,4 +1,5 @@
 var map;
+var markers;
 function initMap() {
 	var mapOptions = {
 	    zoom: 3,
@@ -6,6 +7,7 @@ function initMap() {
 	};
 	map = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
+	markers = [];
 
 	for (var i = photos.data.length - 1; i >= 0; i--) {
 		addToMap(photos.data[i]);
@@ -13,7 +15,6 @@ function initMap() {
 }
 
 function addToMap(photo) {
-	console.log(photo);
 	var infowindow = new google.maps.InfoWindow({
 	    content: photoView(photo),
 	    maxWidth: 1000
@@ -24,6 +25,7 @@ function addToMap(photo) {
 		        title: photo.location.name,
 		        icon: '/pin.svg'
 		    });
+	markers.push(marker);
 	google.maps.event.addListener(marker, 'click', function() {
     	infowindow.open(map, marker);
   	});
