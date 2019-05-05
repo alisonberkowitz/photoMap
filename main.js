@@ -52,7 +52,9 @@ function photoView(photo) {
 
 function mapInstaDownloads() {
 	for (var i = media.photos.length - 1; i >= 0; i--) {
-		addToMap(createModelFromInsta(media.photos[i]));
+		if (media.photos[i].location) {
+			addToMap(createModelFromInsta(media.photos[i]));
+		}
 	};
 }
 
