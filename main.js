@@ -32,7 +32,7 @@ function addToMap(photo) {
 		        map: map,
 		        position: new google.maps.LatLng(photo.location.latitude, photo.location.longitude),
 		        title: photo.location.name,
-		        icon: '/pin.svg'
+		        icon: 'pin.svg'
 		    });
 	google.maps.event.addListener(marker, 'click', function() {
     	infowindow.open(map, marker);

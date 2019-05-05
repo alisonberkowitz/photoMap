@@ -14,7 +14,7 @@ var photos = {
       "images": {
         "standard_resolution": {
           "width": 640,
-          "url": "/img/IMG_4118.JPG",
+          "url": "img/IMG_4118.JPG",
           "height": 640
         }
       },
