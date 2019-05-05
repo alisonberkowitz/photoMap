@@ -2,7 +2,7 @@ var map;
 function initMap() {
 	var mapOptions = {
 	    zoom: 3,
-	    center: new google.maps.LatLng(42.3581, -71.0636)
+	    center: new google.maps.LatLng(10, -10)
 	};
 	map = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
@@ -63,9 +63,18 @@ function createModelFromInsta(photo) {
 }
 
 function getLocation(name) {
-	return {
-		name: name,
-		latitude: 41,
-		longitude: 71
-	};
+	if (name in places) {
+		return {
+			name: name,
+			latitude: places[name]['location']['latitude'],
+			longitude: places[name]['location']['longitude']
+		};
+	} else {
+		console.log(name);
+		return {
+			name: name,
+			latitude: 71,
+			longitude: 42
+		};
+	}
 }
